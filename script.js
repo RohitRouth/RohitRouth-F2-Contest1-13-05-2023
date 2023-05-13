@@ -39,6 +39,4 @@ function concatenateArray() {
   ];
   arr = arr.concat(newArray);
   console.log(arr);
-}
-
-
+};
