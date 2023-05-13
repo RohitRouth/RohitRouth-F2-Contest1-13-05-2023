@@ -1,47 +1,44 @@
-
-let students = [
+let arr = [
   { id: 1, name: "john", age: "18", marks: 80 },
   { id: 2, name: "jack", age: "20", marks: 85 },
-  { id: 3, name: "karen", age: "19", marks: 35 }
+  { id: 3, name: "karen", age: "19", marks: 35 },
 ];
 
+function PrintStudentswithMap() {
+  const studentsWithMarksOver50 = arr.filter((student) => student.marks > 50);
+  const studentNamesWithMarksOver50 = studentsWithMarksOver50.map((student) => student.name);
+  console.log(studentNamesWithMarksOver50);
+}
 
-const PrintStudentbyMap = () => {
-  const studentsWithMarksOver50 = students
-    .filter(student => student.marks > 50)
-    .map(student => student.name);
-  console.log(studentsWithMarksOver50);
-};
-
-
-const PrintStudentbyForEach = () => {
-  students.forEach(student => {
+function PrintStudentsbyForEach() {
+  const studentsWithMarksOver50 = [];
+  arr.forEach((student) => {
     if (student.marks > 50) {
-      console.log(student.name);
+      studentsWithMarksOver50.push(student);
     }
   });
-};
+  console.log(studentsWithMarksOver50);
+}
 
-
-const addData = () => {
+function addData() {
   const newStudent = { id: 4, name: "susan", age: "20", marks: 45 };
-  students.push(newStudent);
+  arr.push(newStudent);
   console.log(newStudent);
-};
+}
 
+function removeFailedStudent() {
+  arr = arr.filter((student) => student.marks >= 50);
+  console.log(arr);
+}
 
-const removeFailedStudent = () => {
-  students = students.filter(student => student.marks >= 50);
-  console.log(students);
-};
-
-
-const ConcatenateArray = () => {
-  const newStudents = [
-    { id: 5, name: "alice", age: "21", marks: 90 },
-    { id: 6, name: "bob", age: "22", marks: 70 },
-    { id: 7, name: "charlie", age: "23", marks: 60 }
+function concatenateArray() {
+  const newArray = [
+    { id: 4, name: "peter", age: "18", marks: 90 },
+    { id: 5, name: "lisa", age: "19", marks: 70 },
+    { id: 6, name: "joe", age: "20", marks: 60 },
   ];
-  students = students.concat(newStudents);
-  console.log(students);
-};
+  arr = arr.concat(newArray);
+  console.log(arr);
+}
+
+
